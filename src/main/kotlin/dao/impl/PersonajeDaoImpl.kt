@@ -31,5 +31,9 @@ class PersonajeDaoImpl(var personajes: MutableList<Personaje> = mutableListOf())
         personajes.remove(personaje)
     }
 
+    override fun agregar(personaje: Personaje): Int {
+       personajes.add(personaje)
+        return personaje.dni
+    }
 
 }

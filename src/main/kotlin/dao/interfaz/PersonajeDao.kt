@@ -8,5 +8,6 @@ interface PersonajeDao {
     fun edad(dni: Int):Int
     fun personajes():MutableList<Personaje>
     fun eliminar(personaje: Personaje)
+    fun agregar(personaje:Personaje):Int
 
 }

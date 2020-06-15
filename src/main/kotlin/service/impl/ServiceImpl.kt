@@ -5,14 +5,17 @@ import modelo.Personaje
 import service.interfaz.Service
 
 class ServiceImpl(personajeDaoImpl: PersonajeDaoImpl):Service {
-    private var personajeDao=personajeDaoImpl
-    override fun personajeByDni(dni:Int): Personaje? = personajeDao.serchByDni(dni)
+    private  var personajeDaoImpl= personajeDaoImpl
 
-    override fun edadDePersonaje(dni:Int): Int = personajeDao.edad(dni)
+    override fun agregarPersonaje(personaje: Personaje): Int =personajeDaoImpl.agregar(personaje)
 
-    override fun nombrePersonaje(dni:Int): String= personajeDao.nombre(dni)
+    override fun personajeByDni(dni:Int): Personaje? = personajeDaoImpl.serchByDni(dni)
 
-    override fun todosLosPersonajes(): List<Personaje> = personajeDao.personajes()
+    override fun edadDePersonaje(dni:Int): Int = personajeDaoImpl.edad(dni)
 
-    override fun eliminarPersonaje(personaje: Personaje) = personajeDao.eliminar(personaje)
+    override fun nombrePersonaje(dni:Int): String= personajeDaoImpl.nombre(dni)
+
+    override fun todosLosPersonajes(): List<Personaje> = personajeDaoImpl.personajes()
+
+    override fun eliminarPersonaje(personaje: Personaje) = personajeDaoImpl.eliminar(personaje)
 }
