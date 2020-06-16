@@ -19,7 +19,7 @@ class ServiceImplTest {
     fun `el servicio crea un personaje con dni 38 nombre ale edad 25 años- Y se agrega al DAO `(){
      serviceImpl.agregarPersonaje(personaje)
      val cantiadaDePersonajesEnDao=dao.personajes.size
-     assert(cantiadaDePersonajesEnDao)
+     assert(cantiadaDePersonajesEnDao==1)
     }
 
 
