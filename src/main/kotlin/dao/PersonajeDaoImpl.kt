@@ -2,10 +2,13 @@ package dao
 
 import dao.exception.ExceptionDao
 import modelo.Personaje
+import java.util.concurrent.atomic.AtomicLong
 
 class PersonajeDaoImpl(var personajes: MutableList<Personaje> = mutableListOf()): PersonajeDao  {
+    val couter= AtomicLong()
+
     override fun serchByDni(dni: Int): Personaje? =try {
-        personajes.find { p->p.dni== dni }
+        personajes.find { p->p.dni== dni }//:? throw  ExceptionDao("El personaje con dni $dni no esta en la base de datos")
     }catch (e:Exception){throw ExceptionDao("El personaje con dni $dni no esta en la base de datos")
     }
 
@@ -29,6 +32,7 @@ class PersonajeDaoImpl(var personajes: MutableList<Personaje> = mutableListOf())
 
     override fun agregar(personaje: Personaje): Int {
         personajes.add(personaje)
+        personaje.id= couter.incrementAndGet()
         return personaje.dni
     }
 }

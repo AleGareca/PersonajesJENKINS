@@ -7,7 +7,7 @@ import org.springframework.boot.test.context.SpringBootTest
 import service.ServiceImpl
 
 @SpringBootTest
-class DemoApplicationTests {
+class  DemoApplicationTests {
 
 	private  val dao= PersonajeDaoImpl()
 	private val serviceImpl= ServiceImpl(dao)
