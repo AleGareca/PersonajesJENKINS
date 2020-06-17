@@ -3,10 +3,11 @@ package dao
 import modelo.Personaje
 
 interface PersonajeDao {
-    fun serchByDni(dni: Int):Personaje?
-    fun nombre(dni:Int):String
-    fun edad(dni: Int):Int
+    fun serchById(id: Long):Personaje?
+    fun nombre(id: Long):String
+    fun edad(id: Long):Int
+    fun dni(id: Long):Int
     fun personajes():MutableList<Personaje>
-    fun eliminar(personaje: Personaje)
-    fun agregar(personaje: Personaje):Int
+    fun eliminar(id: Long)
+    fun agregar(personaje: Personaje):Long
 }

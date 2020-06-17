@@ -3,10 +3,11 @@ package service
 import modelo.Personaje
 
 interface Service {
-    fun agregarPersonaje(personaje: Personaje):Int
-    fun personajeByDni(dni:Int):Personaje?
-    fun edadDePersonaje(dni:Int):Int
-    fun nombrePersonaje(dni:Int):String
+    fun agregarPersonaje(personaje: Personaje):Long
+    fun personajeById(id: Long):Personaje?
+    fun edadDePersonaje(id: Long):Int
+    fun dniDePersonaje(id: Long):Int
+    fun nombrePersonaje(id: Long):String
     fun todosLosPersonajes():List<Personaje>
-    fun eliminarPersonaje(personaje: Personaje)
+    fun eliminarPersonaje(id: Long)
 }

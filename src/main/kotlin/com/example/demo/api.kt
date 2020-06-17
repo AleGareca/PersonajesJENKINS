@@ -6,9 +6,6 @@ import org.springframework.web.bind.annotation.*
 import service.ServiceImpl
 
 
-
-
-
 @RestController
 class PersonajeController {
 
