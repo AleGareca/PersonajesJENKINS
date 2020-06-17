@@ -12,23 +12,23 @@ class PersonajeDaoImpl(var personajes: MutableList<Personaje> = mutableListOf())
     }catch (e:Exception){throw ExceptionDao("El personaje con id $id no esta en la base de datos")
     }
 
-    override fun edad(id: Long): Int {
+    override fun edadPersonaje(id: Long): Int {
         val personaje= serchById(id)
         return personaje!!.edad
 
     }
 
-    override fun dni(id: Long): Int {
+    override fun dniPersonaje(id: Long): Int {
         val personaje= serchById(id)
         return personaje!!.dni
     }
 
-    override fun nombre(id: Long): String {
+    override fun nombrePersonaje(id: Long): String {
         val personaje= serchById(id)
         return personaje!!.nombre
     }
 
-    override fun personajes(): MutableList<Personaje> = personajes
+    override fun todosLosPersonajes(): MutableList<Personaje> = personajes
 
 
     override fun eliminar(id: Long) {
